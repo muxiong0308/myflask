@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/Users/linmuxiong/Desktop/otherEnv/dashTest/bin/",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
+}

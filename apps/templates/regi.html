@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% from "_formhelpers.html" import render_field %}
+
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class="flash">
+    {% for message in messages %}
+    <div class="alert alert-success" style="text-align: center">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <strong>{{ message }}</strong></div>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<h1>注册页</h1>
+<form action="{{ url_for("regi") }}" method="post" name="regi">
+    {{ form.csrf_token }}
+    <dl>
+        {{ render_field(form.user_id,size=50) }}
+        {{ render_field(form.user_name,size=50) }}
+        {{ render_field(form.password,size=50) }}
+        {{ render_field(form.confrimPsw,size=50) }}
+    </dl>
+    <p><input type="submit" value="提交"></p>
+</form>
+{% endblock %}
